@@ -87,7 +87,7 @@
             <!-- Contact Form -->
             <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg reveal">
                 <h2 class="text-2xl font-bold mb-2">Send us a Message</h2>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">When you submit this form, your message will open in Telegram so you can send it to our Cambodia support team.</p>
+                <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">When you submit this form, your message will be delivered directly to our Telegram support bot.</p>
                 <form id="telegram-contact-form" class="space-y-6">
                     <div class="grid grid-cols-2 gap-4">
                         <div>
@@ -116,7 +116,8 @@
                         <label for="message" class="block text-sm font-medium mb-2">Message</label>
                         <textarea id="message" name="message" rows="4" placeholder="Tell us your shipping route, timeline, and cargo details." required class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:border-blue-500"></textarea>
                     </div>
-                    <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-all">Send Message on Telegram</button>
+                    <button id="telegram-submit-btn" type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-all disabled:opacity-70 disabled:cursor-not-allowed">Send Message</button>
+                    <p id="telegram-status" class="text-sm hidden" role="status" aria-live="polite"></p>
                 </form>
             </div>
 
@@ -202,10 +203,32 @@
     </footer>
 
     <script>
+        const TELEGRAM_BOT_TOKEN = 'PASTE_YOUR_BOT_TOKEN_HERE';
+        const TELEGRAM_CHAT_ID = 'PASTE_YOUR_CHAT_ID_HERE';
+
         const telegramContactForm = document.getElementById('telegram-contact-form');
+        const telegramSubmitBtn = document.getElementById('telegram-submit-btn');
+        const telegramStatus = document.getElementById('telegram-status');
+
+        const setTelegramStatus = (message, type) => {
+            if (!telegramStatus) {
+                return;
+            }
+
+            telegramStatus.textContent = message;
+            telegramStatus.classList.remove('hidden', 'text-red-600', 'text-green-600', 'dark:text-red-400', 'dark:text-green-400', 'text-slate-600', 'dark:text-slate-400');
+
+            if (type === 'error') {
+                telegramStatus.classList.add('text-red-600', 'dark:text-red-400');
+            } else if (type === 'success') {
+                telegramStatus.classList.add('text-green-600', 'dark:text-green-400');
+            } else {
+                telegramStatus.classList.add('text-slate-600', 'dark:text-slate-400');
+            }
+        };
 
         if (telegramContactForm) {
-            telegramContactForm.addEventListener('submit', (event) => {
+            telegramContactForm.addEventListener('submit', async (event) => {
                 event.preventDefault();
 
                 const formData = new FormData(telegramContactForm);
@@ -216,6 +239,12 @@
                 const message = (formData.get('message') || '').toString().trim();
 
                 if (!firstName || !lastName || !email || !message) {
+                    setTelegramStatus('Please fill in all required fields.', 'error');
+                    return;
+                }
+
+                if (TELEGRAM_BOT_TOKEN.includes('PASTE_YOUR_BOT_TOKEN_HERE') || TELEGRAM_CHAT_ID.includes('PASTE_YOUR_CHAT_ID_HERE')) {
+                    setTelegramStatus('Telegram is not configured yet. Add your bot token and chat ID in contact.html.', 'error');
                     return;
                 }
 
@@ -225,10 +254,43 @@
                     `Email: ${email}`,
                     `Subject: ${subject}`,
                     `Message: ${message}`,
+                    `Submitted: ${new Date().toLocaleString()}`
                 ].join('\n');
 
-                const shareUrl = `https://t.me/share/url?url=${encodeURIComponent('https://logistream.com/cambodia')}&text=${encodeURIComponent(telegramMessage)}`;
-                window.open(shareUrl, '_blank', 'noopener,noreferrer');
+                const telegramApiUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+
+                try {
+                    if (telegramSubmitBtn) {
+                        telegramSubmitBtn.disabled = true;
+                    }
+                    setTelegramStatus('Sending your message...', 'info');
+
+                    const response = await fetch(telegramApiUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            chat_id: TELEGRAM_CHAT_ID,
+                            text: telegramMessage
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (!response.ok || !result.ok) {
+                        throw new Error(result.description || 'Failed to send message');
+                    }
+
+                    telegramContactForm.reset();
+                    setTelegramStatus('Message sent successfully. Our team will contact you soon.', 'success');
+                } catch (error) {
+                    setTelegramStatus('Unable to send message right now. Please try again in a moment.', 'error');
+                } finally {
+                    if (telegramSubmitBtn) {
+                        telegramSubmitBtn.disabled = false;
+                    }
+                }
             });
         }
     </script>
