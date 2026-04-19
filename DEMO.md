@@ -1,50 +1,45 @@
-# LogiStream Logistics Platform - Demonstration Report
+# LogiStream Project Overview
 
-This document serves as a visual and technical demonstration of the **LogiStream Logistics Platform**, a modern, responsive website built with **Tailwind CSS v4 CLI**, **HTML5**, and **JavaScript**.
+This project is a responsive website for **LogiStream**, a Cambodia-focused delivery support brand built with **Tailwind CSS v4**, **HTML**, and **JavaScript**.
 
-## 1. Project Overview
-LogiStream is a comprehensive logistics solution designed for global shipping and supply chain management. The project features:
-- **5 Core Pages**: Home, Services, Tracking, About, and Contact.
-- **Modern UI/UX**: Clean, professional design with a focus on usability.
-- **Dark Mode**: Fully integrated dark mode with system preference detection.
-- **Responsive Design**: Optimized for mobile, tablet, and desktop.
-- **SEO Optimized**: Semantic HTML, meta tags, and fast loading times.
-- **Animations**: Custom scroll-triggered animations using Intersection Observer.
+## Project Summary
+LogiStream is designed to present delivery services in a clear and simple way. The project includes:
+- **5 main pages**: Home, Services, Tracking, About, and Contact
+- **Simple language**: Clear wording for customers who need quick information
+- **Responsive layout**: Works across mobile, tablet, and desktop
+- **Dark mode**: Supports light and dark display preferences
+- **Light animations**: Uses small scroll-based motion for page sections
 
-## 2. Page Walkthrough
+## Page Summary
 
-### Home Page
-- **Hero Section**: Dynamic headline with a clear Call-to-Action (CTA).
-- **Stats Section**: Real-time business metrics (Countries, Packages, On-time delivery).
-- **Interactive Navigation**: Sticky glassmorphism header with dark mode toggle.
+### Home
+- Introduces the brand and explains the main service focus
+- Highlights local delivery, province shipping, business delivery, and tracking support
 
-### Services Page
-- **Service Grid**: Detailed breakdown of Air, Ocean, and Road transport.
-- **CTA Section**: Encourages users to request a custom quote.
+### Services
+- Explains the main delivery options in a practical way
+- Helps visitors understand which service fits their shipment
 
-### Tracking Page (Interactive)
-- **Real-time Simulation**: Users can enter a tracking number (e.g., `LS123456789`) to see a simulated shipment timeline.
-- **FAQ Section**: Addresses common customer concerns.
+### Tracking
+- Shows a sample tracking layout with fixed shipment records
+- Explains that real shipment updates should be requested through support
 
-### About Page
-- **Company History**: Narrative of the brand's growth since 2010.
-- **Core Values**: Reliability, Innovation, and Sustainability.
-- **Leadership Team**: Professional profiles of the executive team.
+### About
+- Explains the purpose of the project
+- Introduces founder **Nov Raksa**
 
-### Contact Page
-- **Interactive Form**: Modern input fields with focus states.
-- **Contact Info**: Direct links to headquarters, phone, and email.
-- **Map Integration**: Visual placeholder for global office locations.
+### Contact
+- Shares direct contact options for support
+- Includes a Telegram-based support form and company contact details
 
-## 3. Technical Implementation
-- **Tailwind CSS v4**: Utilized the latest CLI-based workflow for optimized production builds.
-- **JavaScript**: Custom logic for dark mode persistence, mobile menu toggling, and scroll animations.
-- **SEO**: Implemented unique meta descriptions and titles for every page.
+## Technical Notes
+- **Tailwind CSS v4** is used for styling
+- **JavaScript** is used for dark mode, mobile menu toggling, and tracking display logic
+- The project is built as a static website with simple front-end interactions
 
-## 4. How to Run
-1. Extract the `logistics-platform.zip` file.
-2. Open `index.html` in any modern web browser.
-3. To rebuild CSS: Run `npm install` followed by `npm run build`.
+## How to Run
+1. Open `index.html` in a web browser.
+2. If needed, rebuild the CSS with `npm run build`.
 
 ---
-*Created by Manus for the Logistics Platform Project.*
+Created for the LogiStream project.

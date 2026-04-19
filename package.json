@@ -4,14 +4,19 @@
   "main": "index.js",
   "scripts": {
     "build": "tailwindcss -i ./src/css/input.css -o ./dist/css/style.css",
-    "watch": "tailwindcss -i ./src/css/input.css -o ./dist/css/style.css --watch"
+    "watch": "tailwindcss -i ./src/css/input.css -o ./dist/css/style.css --watch",
+    "bot": "node telegram-bot.js",
+    "bot:check": "node --check telegram-bot.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "LogiStream Cambodia website with clear delivery pages, tracking support, and contact tools",
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.2",
     "tailwindcss": "^4.2.2"
+  },
+  "dependencies": {
+    "telegraf": "^4.14.0"
   }
 }
