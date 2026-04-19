@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Shipment Cambodia | LogiStream Logistics</title>
+    <meta name="description" content="Track your LogiStream Cambodia shipments with realistic live-style updates across Phnom Penh, Siem Reap, Battambang, and Sihanoukville.">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        (() => {
+            try {
+                const savedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+                if (isDark) {
+                    document.documentElement.classList.add('dark');
+                }
+                document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+            } catch {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDark) {
+                    document.documentElement.classList.add('dark');
+                }
+                document.documentElement.style.colorScheme = prefersDark ? 'dark' : 'light';
+            }
+        })();
+    </script>
+    <script defer src="src/js/main.js"></script>
+</head>
+<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">LogiStream</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400 font-medium">Home</a>
+                    <a href="services.html" class="hover:text-blue-600 dark:hover:text-blue-400 font-medium">Services</a>
+                    <a href="tracking.html" class="text-blue-600 dark:text-blue-400 font-medium">Tracking</a>
+                    <a href="about.html" class="hover:text-blue-600 dark:hover:text-blue-400 font-medium">About</a>
+                    <a href="contact.html" class="hover:text-blue-600 dark:hover:text-blue-400 font-medium">Contact</a>
+                    <button data-theme-toggle type="button" aria-label="Toggle dark mode" aria-pressed="false" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                        <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" aria-label="Toggle menu" title="Toggle menu" class="p-2 rounded-md text-slate-600 dark:text-slate-300">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-4 space-y-2">
+            <a href="index.html" class="block py-2 font-medium">Home</a>
+            <a href="services.html" class="block py-2 font-medium">Services</a>
+            <a href="tracking.html" class="block py-2 font-medium text-blue-600">Tracking</a>
+            <a href="about.html" class="block py-2 font-medium">About</a>
+            <a href="contact.html" class="block py-2 font-medium">Contact</a>
+            <button data-theme-toggle type="button" aria-label="Toggle dark mode" aria-pressed="false" class="mt-2 w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-medium">
+                <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                <span>Theme</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Tracking Hero -->
+    <section class="pt-32 pb-20 px-4 bg-slate-50 dark:bg-slate-900/30">
+        <div class="max-w-3xl mx-auto text-center reveal">
+            <h1 class="text-4xl font-bold mb-6">Track Your Cambodia Shipment</h1>
+            <p class="text-slate-600 dark:text-slate-400 mb-10">Enter your tracking number for realistic route updates, ETA, and latest logistics status in Cambodia.</p>
+            <div class="flex flex-col sm:flex-row gap-4 bg-white dark:bg-slate-800 p-2 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700">
+                <input type="text" id="tracking-input" placeholder="Enter Tracking Number (e.g., LSKH240001)" aria-label="Tracking number" class="flex-1 px-6 py-4 bg-transparent focus:outline-none text-lg uppercase">
+                <button id="track-btn" type="button" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-all">Track Now</button>
+            </div>
+            <p id="tracking-error" class="hidden mt-4 text-sm text-red-600 dark:text-red-400">Please enter a valid tracking number format like LSKH240001.</p>
+            <div class="mt-6 flex flex-wrap justify-center gap-2 text-sm">
+                <button type="button" class="sample-track px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700" data-track="LSKH240001">Try LSKH240001</button>
+                <button type="button" class="sample-track px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700" data-track="LSKH240002">Try LSKH240002</button>
+                <button type="button" class="sample-track px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700" data-track="LSKH240003">Try LSKH240003</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Results (Hidden by default) -->
+    <section id="tracking-results" class="hidden py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 shadow-lg">
+                <div class="flex flex-wrap justify-between items-center mb-12 pb-8 border-b border-slate-100 dark:border-slate-800">
+                    <div>
+                        <p class="text-sm text-slate-500 mb-1">Tracking Number</p>
+                        <h3 class="text-xl font-bold" id="res-tracking-id">LSKH240001</h3>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-slate-500 mb-1">Status</p>
+                        <span id="res-status" class="px-4 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full text-sm font-bold">In Transit</span>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-3 gap-4 mb-10">
+                    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+                        <p class="text-xs text-slate-500 mb-1">Route</p>
+                        <p id="res-route" class="font-semibold">Phnom Penh -> Siem Reap</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+                        <p class="text-xs text-slate-500 mb-1">Service</p>
+                        <p id="res-service" class="font-semibold">Domestic Express</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+                        <p class="text-xs text-slate-500 mb-1">Estimated Delivery</p>
+                        <p id="res-eta" class="font-semibold">April 16, 2026 - 6:00 PM ICT</p>
+                    </div>
+                </div>
+                <p id="res-last-update" class="text-sm text-slate-500 mb-8">Last updated: April 16, 2026 - 11:20 AM ICT</p>
+
+                <!-- Timeline -->
+                <div id="res-timeline" class="space-y-12 relative before:absolute before:left-2.75 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-800">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-3xl mx-auto reveal">
+            <h2 class="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+                <div class="p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl">
+                    <h4 class="font-bold mb-2">How long does domestic delivery in Cambodia take?</h4>
+                    <p class="text-slate-600 dark:text-slate-400">Most Phnom Penh deliveries arrive same-day, while provincial routes usually arrive within 1-2 business days.</p>
+                </div>
+                <div class="p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl">
+                    <h4 class="font-bold mb-2">What should I do if my package is delayed?</h4>
+                    <p class="text-slate-600 dark:text-slate-400">Contact our Cambodia support team with your tracking number, pickup date, and destination for immediate escalation.</p>
+                </div>
+                <div class="p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl">
+                    <h4 class="font-bold mb-2">Which tracking numbers can I test?</h4>
+                    <p class="text-slate-600 dark:text-slate-400">Use LSKH240001, LSKH240002, or LSKH240003 to view static demo shipment data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 px-4 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-white text-xl font-bold mb-4">LogiStream</h3>
+                <p class="text-sm">Cambodia tracking demo powered by realistic static shipment records and fixed route SLA data.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+                    <li><a href="services.html" class="hover:text-blue-400">Services</a></li>
+                    <li><a href="tracking.html" class="hover:text-blue-400">Tracking</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Support</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="contact.html" class="hover:text-blue-400">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-blue-400">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-blue-400">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Newsletter</h4>
+                <div class="flex">
+                    <input type="email" placeholder="Email" title="Email" class="bg-slate-900 border border-slate-800 rounded-l-lg px-4 py-2 w-full focus:outline-none focus:border-blue-500">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700 transition-colors">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 text-center text-xs">
+            &copy; 2026 LogiStream Logistics. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const staticTrackingData = {
+            LSKH240001: {
+                trackingId: 'LSKH240001',
+                status: 'In Transit',
+                statusTone: 'in-transit',
+                route: 'Phnom Penh -> Siem Reap',
+                service: 'Domestic Express',
+                eta: 'April 16, 2026 - 6:00 PM ICT',
+                lastUpdate: 'April 16, 2026 - 11:20 AM ICT',
+                timeline: [
+                    { title: 'Departed Phnom Penh Sort Facility', meta: 'Phnom Penh | April 16, 2026 - 11:20 AM ICT', done: true },
+                    { title: 'Picked Up from Sender', meta: 'Chamkar Mon, Phnom Penh | April 16, 2026 - 9:05 AM ICT', done: true },
+                    { title: 'Booking Confirmed', meta: 'LogiStream Cambodia App | April 16, 2026 - 8:40 AM ICT', done: true },
+                ],
+            },
+            LSKH240002: {
+                trackingId: 'LSKH240002',
+                status: 'Out for Delivery',
+                statusTone: 'out-for-delivery',
+                route: 'Siem Reap -> Battambang',
+                service: 'Priority Road',
+                eta: 'April 16, 2026 - 4:30 PM ICT',
+                lastUpdate: 'April 16, 2026 - 2:05 PM ICT',
+                timeline: [
+                    { title: 'Courier Out for Final Delivery', meta: 'Battambang Central | April 16, 2026 - 2:05 PM ICT', done: true },
+                    { title: 'Arrived at Destination Hub', meta: 'Battambang Hub | April 16, 2026 - 1:10 PM ICT', done: true },
+                    { title: 'Dispatched from Siem Reap Hub', meta: 'Siem Reap | April 16, 2026 - 9:25 AM ICT', done: true },
+                ],
+            },
+            LSKH240003: {
+                trackingId: 'LSKH240003',
+                status: 'Delivered',
+                statusTone: 'delivered',
+                route: 'Sihanoukville -> Phnom Penh',
+                service: 'Standard Domestic',
+                eta: 'Delivered on April 15, 2026 - 5:10 PM ICT',
+                lastUpdate: 'April 15, 2026 - 5:10 PM ICT',
+                timeline: [
+                    { title: 'Delivered to Receiver', meta: 'Toul Kork, Phnom Penh | April 15, 2026 - 5:10 PM ICT', done: true },
+                    { title: 'Out for Delivery', meta: 'Phnom Penh Final Mile | April 15, 2026 - 1:40 PM ICT', done: true },
+                    { title: 'Arrived at Phnom Penh Distribution Hub', meta: 'Phnom Penh | April 15, 2026 - 11:05 AM ICT', done: true },
+                ],
+            },
+        };
+
+        const trackingInput = document.getElementById('tracking-input');
+        const trackingButton = document.getElementById('track-btn');
+        const trackingError = document.getElementById('tracking-error');
+        const resultsSection = document.getElementById('tracking-results');
+        const sampleButtons = document.querySelectorAll('.sample-track');
+
+        const statusElement = document.getElementById('res-status');
+        const trackingIdElement = document.getElementById('res-tracking-id');
+        const routeElement = document.getElementById('res-route');
+        const serviceElement = document.getElementById('res-service');
+        const etaElement = document.getElementById('res-eta');
+        const lastUpdateElement = document.getElementById('res-last-update');
+        const timelineElement = document.getElementById('res-timeline');
+
+        const statusClassMap = {
+            delivered: 'bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400',
+            'out-for-delivery': 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+            'in-transit': 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
+        };
+
+        const defaultStatusClasses = 'rounded-full text-sm font-bold px-4 py-1';
+
+        const renderTimeline = (timeline) => {
+            timelineElement.innerHTML = timeline
+                .map((event, index) => {
+                    const markerClass = index === 0 ? 'bg-blue-600' : (event.done ? 'bg-slate-500 dark:bg-slate-400' : 'bg-slate-300 dark:bg-slate-700');
+                    const titleClass = index === 0 ? 'font-bold' : 'font-bold text-slate-600 dark:text-slate-400';
+
+                    return `
+                        <div class="relative pl-10">
+                            <div class="absolute left-0 top-1.5 w-6 h-6 ${markerClass} rounded-full border-4 border-white dark:border-slate-900"></div>
+                            <h4 class="${titleClass}">${event.title}</h4>
+                            <p class="text-sm text-slate-500">${event.meta}</p>
+                        </div>
+                    `;
+                })
+                .join('');
+        };
+
+        const showError = (message) => {
+            trackingError.textContent = message;
+            trackingError.classList.remove('hidden');
+            resultsSection.classList.add('hidden');
+        };
+
+        const hideError = () => {
+            trackingError.classList.add('hidden');
+        };
+
+        const runTracking = () => {
+            const normalizedId = (trackingInput.value || '').trim().toUpperCase();
+            const formatOk = /^LSKH\d{6}$/.test(normalizedId);
+
+            if (!formatOk) {
+                showError('Please enter a valid tracking number format like LSKH240001.');
+                return;
+            }
+
+            const shipment = staticTrackingData[normalizedId];
+
+            if (!shipment) {
+                showError('Tracking number not found in static demo data. Try LSKH240001, LSKH240002, or LSKH240003.');
+                return;
+            }
+
+            hideError();
+
+            trackingIdElement.textContent = shipment.trackingId;
+            statusElement.textContent = shipment.status;
+            statusElement.className = `${defaultStatusClasses} ${statusClassMap[shipment.statusTone] || statusClassMap['in-transit']}`;
+            routeElement.textContent = shipment.route;
+            serviceElement.textContent = shipment.service;
+            etaElement.textContent = shipment.eta;
+            lastUpdateElement.textContent = `Last updated: ${shipment.lastUpdate}`;
+            renderTimeline(shipment.timeline);
+
+            resultsSection.classList.remove('hidden');
+            window.scrollTo({
+                top: resultsSection.offsetTop - 100,
+                behavior: 'smooth',
+            });
+        };
+
+        trackingButton.addEventListener('click', runTracking);
+        trackingInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                runTracking();
+            }
+        });
+
+        sampleButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                trackingInput.value = button.dataset.track || '';
+                runTracking();
+            });
+        });
+
+        renderTimeline(staticTrackingData.LSKH240001.timeline);
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | LogiStream Logistics</title>
+    <meta name="description" content="Learn about LogiStream's mission, history, and the team behind our global logistics solutions.">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        (() => {
+            try {
+                const savedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+                if (isDark) {
+                    document.documentElement.classList.add('dark');
+                }
+                document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+            } catch {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDark) {
+                    document.documentElement.classList.add('dark');
+                }
+                document.documentElement.style.colorScheme = prefersDark ? 'dark' : 'light';
+            }
+        })();
+    </script>
+    <script defer src="src/js/main.js"></script>
+</head>
+<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">LogiStream</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400 font-medium">Home</a>
+                    <a href="services.html" class="hover:text-blue-600 dark:hover:text-blue-400 font-medium">Services</a>
+                    <a href="tracking.html" class="hover:text-blue-600 dark:hover:text-blue-400 font-medium">Tracking</a>
+                    <a href="about.html" class="text-blue-600 dark:text-blue-400 font-medium">About</a>
+                    <a href="contact.html" class="hover:text-blue-600 dark:hover:text-blue-400 font-medium">Contact</a>
+                    <button data-theme-toggle type="button" aria-label="Toggle dark mode" aria-pressed="false" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                        <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" aria-label="Toggle menu" title="Toggle menu" class="p-2 rounded-md text-slate-600 dark:text-slate-300">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-4 space-y-2">
+            <a href="index.html" class="block py-2 font-medium">Home</a>
+            <a href="services.html" class="block py-2 font-medium">Services</a>
+            <a href="tracking.html" class="block py-2 font-medium">Tracking</a>
+            <a href="about.html" class="block py-2 font-medium text-blue-600">About</a>
+            <a href="contact.html" class="block py-2 font-medium">Contact</a>
+            <button data-theme-toggle type="button" aria-label="Toggle dark mode" aria-pressed="false" class="mt-2 w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-medium">
+                <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                <span>Theme</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Pioneering Global Logistics Since 2010</h1>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+                    LogiStream was founded with a simple mission: to make global shipping as easy as sending a local message. Over the past 16 years, we've grown from a small local courier to a global logistics powerhouse.
+                </p>
+                <p class="text-lg text-slate-600 dark:text-slate-400">
+                    Our commitment to innovation, sustainability, and customer satisfaction has made us the preferred partner for thousands of businesses worldwide.
+                </p>
+            </div>
+            <div class="reveal">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80" alt="Our Team" class="rounded-2xl shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20 px-4 bg-slate-50 dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center reveal">Our Core Values</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white dark:bg-slate-900 rounded-2xl shadow-sm reveal">
+                    <h3 class="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400">Reliability</h3>
+                    <p class="text-slate-600 dark:text-slate-400">We deliver on our promises, ensuring your goods reach their destination safely and on time, every time.</p>
+                </div>
+                <div class="p-8 bg-white dark:bg-slate-900 rounded-2xl shadow-sm reveal">
+                    <h3 class="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400">Innovation</h3>
+                    <p class="text-slate-600 dark:text-slate-400">We leverage the latest technology to optimize routes, reduce costs, and provide real-time visibility.</p>
+                </div>
+                <div class="p-8 bg-white dark:bg-slate-900 rounded-2xl shadow-sm reveal">
+                    <h3 class="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400">Sustainability</h3>
+                    <p class="text-slate-600 dark:text-slate-400">We are committed to reducing our carbon footprint through eco-friendly transport and smart logistics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12 reveal">Only Me</h2>
+            <div class="max-w-sm mx-auto reveal">
+                <div class="w-32 h-32 bg-slate-200 dark:bg-slate-800 rounded-full mx-auto mb-4 overflow-hidden">
+                    <img src="https://i.pravatar.cc/150?u=nov-raksa" alt="Nov Raksa">
+                </div>
+                <h4 class="font-bold text-xl">My name is Nov Raksa</h4>
+                <p class="text-sm text-slate-500">Founder of LogiStream</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 px-4 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-white text-xl font-bold mb-4">LogiStream</h3>
+                <p class="text-sm">Leading the way in global logistics and supply chain innovation since 2010.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+                    <li><a href="services.html" class="hover:text-blue-400">Services</a></li>
+                    <li><a href="tracking.html" class="hover:text-blue-400">Tracking</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Support</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="contact.html" class="hover:text-blue-400">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-blue-400">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-blue-400">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Newsletter</h4>
+                <div class="flex">
+                    <input type="email" placeholder="Email" class="bg-slate-900 border border-slate-800 rounded-l-lg px-4 py-2 w-full focus:outline-none focus:border-blue-500">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700 transition-colors">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 text-center text-xs">
+            &copy; 2026 LogiStream Logistics. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
